@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 
-> search for songs and get thier audio-features
+> search for songs and get thier [audio-features](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/)
 
 ## Install
 
