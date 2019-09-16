@@ -35,34 +35,7 @@ class SpotifyTrackInfo {
                     };
 
                     async searchSpotify(query, offset = 0, limit = 5, type = "track") {
-                            try {
-                                // docs: https://developer.spotify.com/documentation/web-api/reference/search/search/
-                                let result = [];
-                                const searchEndpoint = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=${type}&limit=${limit}&offset=${offset}`;
-                                const res = await fetch(searchEndpoint, {
-                                    method: "GET",
-                                    headers: this.headers
-                                });
-                                const json = await res.json();
-                                if (!json.tracks) {
-                                    throw Error(json.error.message);
-                                }
-                                const tracks = json["tracks"]["items"];
-                                for (const track of tracks) {
-                                    const albumTitle = track.album.name;
-                                    const title = track.name;
-                                    const id = track.id;
-                                    const audioFeatures = await this.getAudioFeatures(id);
-                                    result.push({
-                                        album: albumTitle,
-                                        title: title,
-                                        id: id,
-                                        audioFeatures: audioFeatures,
-                                        href: track.href,
-                                        uri: track.uri,
-                                        popularity: `${track.popularity}/100`
-                                    });
-                                }
+                            ...
                                 return [{
                                     album: albumTitle,
                                     title: title,
