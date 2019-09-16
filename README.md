@@ -50,6 +50,7 @@ class SpotifyTrackInfo {
 
                             }
                             ...
+                    };
 ```
 
 ## Author
